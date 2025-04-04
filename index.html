@@ -1,116 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurateur de Personnage</title>
-    <!-- Lien vers Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .character-image {
-            max-width: 100%;
-            height: auto;
-        }
-        .customizer-panel {
-            border: 1px solid #ccc;
-            padding: 20px;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Configurateur de Personnage</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
 <body>
-
 <div class="container">
     <div class="row">
-        <!-- Fenêtre d'affichage du personnage -->
-        <div class="col-md-8">
-            <div class="text-center">
-                <img id="characterDisplay" src="assets/head1.png" alt="Personnage" class="character-image">
-            </div>
+        <div class="col-md-4 character-container text-center">
+            <img id="character" src="assets/default_character.png" alt="Personnage" class="img-fluid">
+        
+            <!-- Champ du nom + bouton random -->
+            <input type="text" id="namecharacter" class="form-control mt-3" readonly placeholder="Nom du personnage">
+            <button class="btn btn-primary mt-2" onclick="randomizeName()">RANDOMIZE NAME</button>
         </div>
 
-        <!-- Panneau de personnalisation -->
-        <div class="col-md-4">
-            <div class="customizer-panel">
-                <h3>Personnalisation du personnage</h3>
-                
-                <!-- Sélection des attributs du personnage -->
-                <div class="mb-3">
-                    <label for="headSelection" class="form-label">Choisissez la couleur de peau</label>
-                    <select class="form-select" id="headSelection">
-                        <option value="modular_assets/Skin/tint1_head.png">Peau 1</option>
-                        <option value="tint2_head.png">Peau 2</option>
-                        <option value="tint3_head.png">Peau 3</option>
-                        <option value="tint4_head.png">Peau 4</option>
-                        <option value="tint5_head.png">Peau 5</option>
-                        <option value="tint6_head.png">Peau 6</option>
-                        <option value="tint7_head.png">Peau 7</option>
-                        <option value="tint8_head.png">Peau 8</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="headSelection" class="form-label">Choisissez la tête</label>
-                    <select class="form-select" id="headSelection">
-                        <option value="head1.png">Tête 1</option>
-                        <option value="head2.png">Tête 2</option>
-                        <option value="head3.png">Tête 3</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="hairSelection" class="form-label">Choisissez les cheveux</label>
-                    <select class="form-select" id="hairSelection">
-                        <option value="hair1.png">Cheveux 1</option>
-                        <option value="hair2.png">Cheveux 2</option>
-                        <option value="hair3.png">Cheveux 3</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="eyesSelection" class="form-label">Choisissez les yeux</label>
-                    <select class="form-select" id="eyesSelection">
-                        <option value="eyes1.png">Yeux 1</option>
-                        <option value="eyes2.png">Yeux 2</option>
-                        <option value="eyes3.png">Yeux 3</option>
-                    </select>
-                </div>
-
-                <!-- Générateur de nom aléatoire -->
-                <button id="generateNameBtn" class="btn btn-primary mb-3">Générer un nom</button>
-                <input type="text" id="characterName" class="form-control" placeholder="Nom du personnage" readonly>
-
-            </div>
+        
+        <!-- Section options -->
+        <div class="col-md-4 option-panel">
+            <button class="btn option-btn active" onclick="selectCategory('face')">FACES</button>
+            <button class="btn option-btn" onclick="selectCategory('hair')">HAIR</button>
+            <button class="btn option-btn" onclick="selectCategory('shirt')">SHIRT</button>
+            <button class="btn option-btn" onclick="selectCategory('skin')">SKIN</button>
+        </div>
+        
+        <!-- Section sélection -->
+        <div class="col-md-4 option-panel selection-grid" id="selection-area">
+            <!-- Les images de sélection apparaîtront ici -->
         </div>
     </div>
 </div>
-
-<!-- Scripts Bootstrap et JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Fonction pour générer un nom aléatoire
-    const names = ["Aragon", "Legolas", "Gimli", "Frodo", "Sam", "Gandalf"];
-    document.getElementById("generateNameBtn").addEventListener("click", () => {
-        const randomName = names[Math.floor(Math.random() * names.length)];
-        document.getElementById("characterName").value = randomName;
-    });
-
-    // Fonction pour mettre à jour l'image du personnage en fonction des choix
-    document.getElementById("headSelection").addEventListener("change", updateCharacter);
-    document.getElementById("hairSelection").addEventListener("change", updateCharacter);
-    document.getElementById("eyesSelection").addEventListener("change", updateCharacter);
-
-    function updateCharacter() {
-        const head = document.getElementById("headSelection").value;
-        const hair = document.getElementById("hairSelection").value;
-        const eyes = document.getElementById("eyesSelection").value;
-
-        // Mettez à jour l'image en fonction des sélections
-        document.getElementById("characterDisplay").src = `modular assets/${head}`;
-        document.getElementById("characterDisplay").style.backgroundImage = `url('assets/${hair}')`;
-        document.getElementById("characterDisplay").style.backgroundImage = `url('assets/${eyes}')`;
-    }
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>
-

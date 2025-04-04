@@ -1,0 +1,51 @@
+body {
+    background-color: #1a1a2e;
+    color: white;
+}
+.character-container {
+    text-align: center;
+    background-color: #0f3460;
+    padding: 20px;
+    border-radius: 10px;
+}
+.option-panel {
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+}
+.option-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.option-btn.active {
+    background-color: #0056b3;
+}
+.selection-grid img {
+    width: 80px;
+    cursor: pointer;
+    margin: 5px;
+}
+.selection-grid img:hover {
+    transform: scale(1.1);
+}
+
+.selection-img {
+    width: 80px;  /* Taille des images */
+    height: 80px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;  /* Effet au survol */
+}
+
+.selection-img:hover {
+    transform: scale(1.1);  /* Agrandissement au survol */
+}
+
+#selection-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  /* Aligne les images */
+}
