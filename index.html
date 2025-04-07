@@ -8,31 +8,42 @@
         <link rel="stylesheet" href="style.css">
     </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 character-container text-center">
-            <img id="character" src="assets/default_character.png" alt="Personnage" class="img-fluid">
-        
-            <!-- Champ du nom + bouton random -->
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center position-relative">
+            <!-- Zone du personnage, avec les éléments positionnés horizontalement -->
+            <div class="character-layer-container">
+                <img id="skin-layer" class="character-layer" src="images/Skin/tint1_head.png" alt="Skin">
+                <img id="face-layer" class="character-layer" src="images/Face/face1.png" alt="Face">
+                <img id="hair-layer" class="character-layer" src="images/Hair/cheveux1.png" alt="Hair">
+                <img id="shirt-layer" class="character-layer" src="images/Shirts/Blue/blueShirt1.png" alt="Shirt">
+            </div>
+
+            <!-- Nom et bouton random -->
             <input type="text" id="namecharacter" class="form-control mt-3" readonly placeholder="Nom du personnage">
             <button class="btn btn-primary mt-2" onclick="randomizeName()">RANDOMIZE NAME</button>
         </div>
+    </div>
 
-        
-        <!-- Section options -->
-        <div class="col-md-4 option-panel">
-            <button class="btn option-btn active" onclick="selectCategory('face')">FACES</button>
-            <button class="btn option-btn" onclick="selectCategory('hair')">HAIR</button>
-            <button class="btn option-btn" onclick="selectCategory('shirt')">SHIRT</button>
-            <button class="btn option-btn" onclick="selectCategory('skin')">SKIN</button>
+    <!-- Boutons pour sélectionner les catégories -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-12 text-center">
+            <button class="btn btn-primary option-btn active" onclick="selectCategory('face')">FACES</button>
+            <button class="btn btn-primary option-btn" onclick="selectCategory('hair')">HAIR</button>
+            <button class="btn btn-primary option-btn" onclick="selectCategory('shirt')">SHIRT</button>
+            <button class="btn btn-primary option-btn" onclick="selectCategory('skin')">SKIN</button>
         </div>
-        
-        <!-- Section sélection -->
-        <div class="col-md-4 option-panel selection-grid" id="selection-area">
+    </div>
+
+    <!-- Section de sélection -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-12 col-md-4 text-center" id="selection-area">
             <!-- Les images de sélection apparaîtront ici -->
         </div>
     </div>
 </div>
+
+    
 <script src="main.js"></script>
 </body>
 </html>

@@ -7,9 +7,9 @@ function randomizeName() {
 const assets = {
     face: ["Face/face1.png", "Face/face2.png", "Face/face3.png"],  // Modification du chemin
     hair: ["Hair/cheveux1.png", "Hair/cheveux2.png", "Hair/cheveux3.png"],  // Modification du chemin
-    shirt: ["Shirt/shirt1.png", "Shirt/shirt2.png", "Shirt/shirt3.png"],  // Modification du chemin
-    skin: ["Skin/tint1_head.png", "Skin/tint2_head.png", "Skin/tint3_head.png", "Skin/tint3_head.png", 
-        "Skin/tint4_head.png", "Skin/tint5_head.png", "Skin/tint6_head.png",
+    shirt: ["Shirts/Blue/blueShirt1.png", "Shirts/Blue/blueShirt2.png", "Shirts/Blue/blueShirt3.png", "Shirts/Blue/blueShirt4.png", "Shirts/Blue/blueShirt5.png", "Shirts/Blue/blueShirt6.png", "Shirts/Blue/blueShirt7.png", "Shirts/Blue/blueShirt8.png",
+        "Shirts/green/greenShirt1.png", "Shirts/green/greenShirt2.png", "Shirts/green/greenShirt3.png", "Shirts/green/greenShirt4.png", "Shirts/green/greenShirt5.png", "Shirts/green/greenShirt6.png", "Shirts/green/greenShirt7.png", "Shirts/green/greenShirt8.png"],  // Modification du chemin
+    skin: ["Skin/tint1_head.png", "Skin/tint2_head.png", "Skin/tint3_head.png", "Skin/tint3_head.png", "Skin/tint4_head.png", "Skin/tint5_head.png", "Skin/tint6_head.png",
     "Skin/tint7_head.png", "Skin/tint8_head.png",]   // Modification du chemin
 };
 
@@ -38,6 +38,27 @@ function updateSelectionGrid() {
 function updateCharacter(asset) {
     document.getElementById("character").src = "images/" + asset;  // Mise à jour du personnage
 }
+
+function updateCharacter(asset) {
+    const imgPath = "images/" + asset;
+
+    switch (currentCategory) {
+        case 'face':
+            document.getElementById("face-layer").src = imgPath;
+            break;
+        case 'hair':
+            document.getElementById("hair-layer").src = imgPath;
+            break;
+        case 'shirt':
+            document.getElementById("shirt-layer").src = imgPath;
+            break;
+        case 'skin':
+            document.getElementById("skin-layer").src = imgPath;
+            break;
+    }
+}
+
+
 
 updateSelectionGrid();
 
