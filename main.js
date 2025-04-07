@@ -36,10 +36,6 @@ function updateSelectionGrid() {
 }
 
 function updateCharacter(asset) {
-    document.getElementById("character").src = "images/" + asset;  // Mise à jour du personnage
-}
-
-function updateCharacter(asset) {
     const imgPath = "images/" + asset;
 
     switch (currentCategory) {
