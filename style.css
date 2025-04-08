@@ -1,128 +1,104 @@
 body {
-    background-color: #1a1a2e;
+    background-image: url(images/background.jpg);
+    backdrop-filter: blur(4px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: white;
     display: flex;
-    justify-content: center;  /* Centre horizontalement */
-    align-items: center;  /* Centre verticalement */
-    height: 100vh;  /* Utilise toute la hauteur de la fenêtre */
-    margin: 0;  /* Supprime la marge par défaut du body */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.container {
-    width: 100%;  /* Largeur de 100% pour s'adapter au responsive */
-    max-width: 1200px;  /* Vous pouvez ajuster cette valeur pour limiter la largeur */
-}
-
-.character-container {
-    text-align: center;
-    background-color: #0f3460;
-    padding: 20px;
-    border-radius: 10px;
-}
-.option-panel {
-    background-color: #16213e;
-    padding: 20px;
-    border-radius: 10px;
-}
 .option-btn {
-    background-color: #007bff;
+    background-color: #0000008f;
     color: white;
     border: none;
-    width: 100%;
-    margin-bottom: 10px;
-}
-.option-btn.active {
-    background-color: #0056b3;
-}
-.selection-grid img {
-    width: 80px;
-    cursor: pointer;
-    margin: 5px;
-}
-.selection-grid img:hover {
-    transform: scale(1.1);
 }
 
+.option-btn.active {
+    background-color: #000000;
+}
+
+.option-btn:hover {
+    background-color: black;
+}
+
+.btn-randomize {
+    background-color: #0000008f;
+    color: white;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-randomize:hover {
+    background-color: #000000;
+}
+
+.btn-randomize:active {
+    background-color: #000000;
+}
+
+
+
 #selection-area img {
-    width: 80px;  /* Définir une largeur fixe pour les images */
-    height: 80px; /* Définir une hauteur fixe pour les images */
-    object-fit: contain; /* Assurer que l'image garde ses proportions sans déformation */
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
     margin: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease;  /* Effet de zoom au survol */
+    transition: transform 0.3s ease;
 }
 
 #selection-area img:hover {
-    transform: scale(1.1);  /* Agrandissement de l'image au survol */
-}
-
-
-.selection-img:hover {
-    transform: scale(1.1);  /* Agrandissement au survol */
+    transform: scale(1.1);
 }
 
 #selection-area {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;  /* Aligne les images */
-    border: 2px solid white;
+    justify-content: space-around;
+    border: 2px solid grey;
     border-radius: 30px;
     padding: 15px;
+    background-color: #0000008f;
 }
 
 
 
 .character-layer-container {
     position: relative;
-    width: 300px; /* Largeur fixe pour la zone de création */
-    height: 400px; /* Hauteur fixe pour la zone de création */
+    width: 300px;
+    height: 400px;
     margin: auto;
-    border: 2px solid white;
+    border: 2px solid grey;
     border-radius: 30px;
-
+    background-color: #0000008f;
 }
 
 
 .character-layer {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    pointer-events: none;
 }
 
-/* Positionnement spécifique des calques */
 #face-layer {
-    width: 100px; /* Ajuste la taille du visage */
-    height: auto; /* Ajuste la hauteur */
     top: 40%;
-    left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #hair-layer {
-    width: 200px; /* Ajuste la taille des cheveux */
-    height: auto;
-    top: 50%; /* Déplace les cheveux vers le bas */
-    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
 
 #shirt-layer {
-    width: 153px; /* Taille ajustée pour le t-shirt */
-    height: auto;
     top: 55%;
-    left: 50%;
     transform: translateX(-50%);
 }
 
 #skin-layer {
-    width: 173px;
-    height: auto;
     top: 40%;
-    left: 50%;
     transform: translate(-50%, -50%);
 }
 

@@ -10,42 +10,49 @@
     <body>
         <div class="container">
             <div class="row justify-content-center mt-4">
-                <!-- Partie gauche : Personnage avec son nom et métier -->
                 <div class="col-12 col-md-4 text-center">
                     <div class="character-layer-container">
                         <img id="skin-layer" class="character-layer" src="images/Skin/tint1_head.png" alt="Skin">
+                        <img id="shirt-layer" class="character-layer" src="images/Shirts/Blue/blueShirt1.png" alt="Shirt">
                         <img id="face-layer" class="character-layer" src="images/Face/face1.png" alt="Face">
                         <img id="hair-layer" class="character-layer" src="images/Hair/cheveux1.png" alt="Hair">
-                        <img id="shirt-layer" class="character-layer" src="images/Shirts/Blue/blueShirt1.png" alt="Shirt">
                     </div>
-                    <!-- Nom du personnage -->
                     <input type="text" id="namecharacter" class="form-control mt-3" readonly placeholder="Nom du personnage">
-                    <button class="btn btn-primary mt-2" onclick="randomizeName()">RANDOMIZE NAME</button>
-                    <!-- Métier du personnage -->
+                    <button class="btn btn-randomize mt-2" onclick="randomizeName()">Nom aléatoire</button>
                     <div class="mt-3">
-                        <label for="job-select" class="form-label">Choisissez le métier de votre personnage</label>
+                        <label for="job-select" class="form-label">Choisissez le métier de votre personnage :</label>
                         <select id="job-select" class="form-select" aria-label="Sélectionner un métier">
                             <option value="" selected disabled>Choisissez un métier...</option>
-                            <option value="warrior">Guerrier</option>
-                            <option value="mage">Mage</option>
-                            <option value="archer">Archer</option>
-                            <option value="healer">Soigneur</option>
-                            <option value="thief">Voleur</option>
+                            <option value="frites">Mangeur de frites</option>
+                            <option value="piegons">Dresseur de pigeons</option>
+                            <option value="code">Codeur fou</option>
+                            <option value="calins">Livreur de câlins</option>
+                            <option value="miettes">Collectionneur de miettes</option>
                         </select>
                     </div>
+                    <div class="mt-3">
+                        <label class="form-label d-block">Sexe du personnage :</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="customInput" class="form-label">Description du personnage :</label>
+                        <input type="text" class="form-control" id="customInput" placeholder="Entrez la biographie du personnage...">
+                    </div>
                 </div>
-
-                <!-- Partie centrale : Boutons de sélection -->
                 <div class="col-12 col-md-4 text-center mt-4 mt-md-0 d-flex justify-content-center flex-column">
                     <button class="btn btn-primary option-btn active mb-2 w-50 mx-auto" onclick="selectCategory('face')">FACES</button>
                     <button class="btn btn-primary option-btn mb-2 w-50 mx-auto" onclick="selectCategory('hair')">HAIR</button>
                     <button class="btn btn-primary option-btn mb-2 w-50 mx-auto" onclick="selectCategory('shirt')">SHIRT</button>
                     <button class="btn btn-primary option-btn mb-2 w-50 mx-auto" onclick="selectCategory('skin')">SKIN</button>
                 </div>
-
-                <!-- Partie droite : Bibliothèque d'images -->
                 <div class="col-12 col-md-4 text-center mt-4 mt-md-0" id="selection-area">
-                    <!-- Les images de sélection apparaîtront ici -->
                 </div>
             </div>
         </div>

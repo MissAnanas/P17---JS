@@ -1,8 +1,14 @@
-const names = ["Anaïs", "Hugo", "Vincent", "Ilyès", "Raphaël", "Fabio"];
+const firstName = ["Anaïs", "Hugo", "Vincent", "Ilyès", "Raphaël", "Fabio"];
+const lastName = ["Pinto", "Thinard", "Nelet", "Kaddouri", "Techer", "Agnello"];
+
 function randomizeName() {
-    const randomIndex = Math.floor(Math.random() * names.length);
-    document.getElementById("namecharacter").value = names[randomIndex];
+    const randomFirstName = firstName[Math.floor(Math.random() * firstName.length)];
+    const randomSurname = lastName[Math.floor(Math.random() * lastName.length)];
+    const fullName = `${randomFirstName} ${randomSurname}`;
+    
+    document.getElementById("namecharacter").value = fullName;
 }
+
 
 const assets = {
     face: ["Face/face1.png", "Face/face2.png", "Face/face3.png", "Face/face4.png"],
@@ -31,8 +37,8 @@ function updateSelectionGrid() {
     
     assets[currentCategory].forEach(asset => {
         let img = document.createElement("img");
-        img.src = "images/" + asset;  // Assure-toi que le chemin commence par "images/"
-        img.classList.add("selection-img");  // Classe pour styliser les images
+        img.src = "images/" + asset;
+        img.classList.add("selection-img");
         img.onclick = () => updateCharacter(asset);
         selectionArea.appendChild(img);
     });
