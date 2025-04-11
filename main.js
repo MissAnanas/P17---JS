@@ -26,19 +26,18 @@ let currentCategory = 'face';
 
 function selectCategory(category) {
     currentCategory = category;
-    document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.category').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
     updateSelectionGrid();
 }
 
 function updateSelectionGrid() {
-    const selectionArea = document.getElementById("selection-area");
+    const selectionArea = document.getElementById("bibliothequeassets");
     selectionArea.innerHTML = "";
     
     assets[currentCategory].forEach(asset => {
         let img = document.createElement("img");
         img.src = "images/" + asset;
-        img.classList.add("selection-img");
         img.onclick = () => updateCharacter(asset);
         selectionArea.appendChild(img);
     });
@@ -49,16 +48,16 @@ function updateCharacter(asset) {
 
     switch (currentCategory) {
         case 'face':
-            document.getElementById("face-layer").src = imgPath;
+            document.getElementById("faceassets").src = imgPath;
             break;
         case 'hair':
-            document.getElementById("hair-layer").src = imgPath;
+            document.getElementById("hairassets").src = imgPath;
             break;
         case 'shirt':
-            document.getElementById("shirt-layer").src = imgPath;
+            document.getElementById("shirtassets").src = imgPath;
             break;
         case 'skin':
-            document.getElementById("skin-layer").src = imgPath;
+            document.getElementById("skinassets").src = imgPath;
             break;
     }
 }

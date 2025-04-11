@@ -11,17 +11,17 @@
         <div class="container">
             <div class="row justify-content-center mt-4">
                 <div class="col-12 col-md-4 text-center">
-                    <div class="character-layer-container">
-                        <img id="skin-layer" class="character-layer" src="images/Skin/tint1_head.png" alt="Skin">
-                        <img id="shirt-layer" class="character-layer" src="images/Shirts/Blue/blueShirt1.png" alt="Shirt">
-                        <img id="face-layer" class="character-layer" src="images/Face/face1.png" alt="Face">
-                        <img id="hair-layer" class="character-layer" src="images/Hair/cheveux1.png" alt="Hair">
+                    <div class="bibliotheque">
+                        <img id="skinassets" class="assetsperso" src="images/Skin/tint1_head.png" alt="Skin">
+                        <img id="shirtassets" class="assetsperso" src="images/Shirts/Blue/blueShirt1.png" alt="Shirt">
+                        <img id="faceassets" class="assetsperso" src="images/Face/face1.png" alt="Face">
+                        <img id="hairassets" class="assetsperso" src="images/Hair/cheveux1.png" alt="Hair">
                     </div>
                     <input type="text" id="namecharacter" class="form-control mt-3" readonly placeholder="Nom du personnage">
-                    <button class="btn btn-randomize mt-2" onclick="randomizeName()">Nom aléatoire</button>
+                    <button class="btn btnname mt-2" onclick="randomizeName()">Nom aléatoire</button>
                     <div class="mt-3">
-                        <label for="job-select" class="form-label">Choisissez le métier de votre personnage :</label>
-                        <select id="job-select" class="form-select" aria-label="Sélectionner un métier">
+                        <label for="jobselect" class="form-label">Métier de votre personnage :</label>
+                        <select id="jobselect" class="form-select" aria-label="Sélectionner un métier">
                             <option value="" selected disabled>Choisissez un métier...</option>
                             <option value="frites">Mangeur de frites</option>
                             <option value="piegons">Dresseur de pigeons</option>
@@ -47,12 +47,12 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4 text-center mt-4 mt-md-0 d-flex justify-content-center flex-column">
-                    <button class="btn btn-primary option-btn active mb-2 w-50 mx-auto" onclick="selectCategory('face')">FACES</button>
-                    <button class="btn btn-primary option-btn mb-2 w-50 mx-auto" onclick="selectCategory('hair')">HAIR</button>
-                    <button class="btn btn-primary option-btn mb-2 w-50 mx-auto" onclick="selectCategory('shirt')">SHIRT</button>
-                    <button class="btn btn-primary option-btn mb-2 w-50 mx-auto" onclick="selectCategory('skin')">SKIN</button>
+                    <button class="btn category active mb-2 w-50 mx-auto" onclick="selectCategory('face')">FACES</button>
+                    <button class="btn category mb-2 w-50 mx-auto" onclick="selectCategory('hair')">HAIR</button>
+                    <button class="btn category mb-2 w-50 mx-auto" onclick="selectCategory('shirt')">SHIRT</button>
+                    <button class="btn category mb-2 w-50 mx-auto" onclick="selectCategory('skin')">SKIN</button>
                 </div>
-                <div class="col-12 col-md-4 text-center mt-4 mt-md-0" id="selection-area">
+                <div class="col-12 col-md-4 text-center mt-4 mt-md-0" id="bibliothequeassets">
                 </div>
             </div>
         </div>

@@ -11,38 +11,47 @@ body {
     margin: 0;
 }
 
-.option-btn {
+.category {
     background-color: #0000008f;
     color: white;
     border: none;
 }
 
-.option-btn.active {
+.category.active {
     background-color: #000000;
 }
 
-.option-btn:hover {
+.category:hover {
     background-color: black;
 }
 
-.btn-randomize {
+.btnname {
     background-color: #0000008f;
     color: white;
     border: none;
     transition: background-color 0.2s ease;
 }
 
-.btn-randomize:hover {
+.btnname:hover {
     background-color: #000000;
 }
 
-.btn-randomize:active {
+.btnname:active {
     background-color: #000000;
 }
 
+#male {
+    background-color: black;
+    border: none;
+}
+
+#female {
+    background-color: black;
+    border: none;
+}
 
 
-#selection-area img {
+#bibliothequeassets img {
     width: 80px;
     height: 80px;
     object-fit: contain;
@@ -51,11 +60,11 @@ body {
     transition: transform 0.3s ease;
 }
 
-#selection-area img:hover {
+#bibliothequeassets img:hover {
     transform: scale(1.1);
 }
 
-#selection-area {
+#bibliothequeassets {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -67,7 +76,7 @@ body {
 
 
 
-.character-layer-container {
+.bibliotheque {
     position: relative;
     width: 300px;
     height: 400px;
@@ -78,26 +87,26 @@ body {
 }
 
 
-.character-layer {
+.assetsperso {
     position: absolute;
 }
 
-#face-layer {
+#faceassets {
     top: 40%;
     transform: translate(-50%, -50%);
 }
 
-#hair-layer {
+#hairassets {
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-#shirt-layer {
+#shirtassets {
     top: 55%;
     transform: translateX(-50%);
 }
 
-#skin-layer {
+#skinassets {
     top: 40%;
     transform: translate(-50%, -50%);
 }
